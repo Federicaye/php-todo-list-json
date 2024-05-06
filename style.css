@@ -3,6 +3,17 @@ header {
     color: white;
 }
 
+.cart {
+    width: calc(35% / 2);
+    background-color: rgb(94, 94, 207);
+}
+.sell {
+    width: calc(35% / 2);
+    background-color: rgb(94, 94, 207);
+}
+.books {
+    width: 65%;
+}
 .soldout {
     color: red;
 }

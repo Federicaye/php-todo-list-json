@@ -5,7 +5,9 @@ createApp({
             books: [],
             cart: [],
             genre: "",
-            itemTitle: ""
+            itemTitle: "",
+            genreSell: "",
+           
         }
     },
     methods: {
@@ -30,11 +32,10 @@ createApp({
             const newBook = {
                 id: null,
                 title: this.itemTitle,
-                genre: '',
+                genre: this.genreSell,
                 img: 'img/book.jpg',
                 soldout: false
             }
-            this.books.push(newBook);
             let nextId = 0;
             this.books.forEach((el) => {
                 if (nextId < el.id) {
@@ -42,6 +43,16 @@ createApp({
                 }
             })
             newBook.id = nextId;
+            this.books.push(newBook);
+            const data = new FormData();
+            data.append('title', this.itemTitle);
+            data.append('genre', this.genreSell);
+            data.append('img', 'img/book.jpg');
+            data.append('id', this.nextId);
+            data.append('soldout', false);
+            axios.post('server.php', data).then((res) =>{
+                console.log(res.data);
+            })
         },
         getData() {
             axios.get('server.php').then((res)=> {

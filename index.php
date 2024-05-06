@@ -33,10 +33,21 @@
                 <option value="science">Science Fiction</option>
             </select>
         </header>
-        <main class="container">
-            <section class=" row ">
-                <div class="col-10 ">
-                    <div class="d-flex flex-wrap">
+        <main >
+            <section class="d-flex ">
+                <div class="sell">
+                <p>sell a used book</p>
+                <input type="text" v-model="itemTitle">
+                <select name="" id="" v-model="genreSell" class="p-2 me-2 ">
+                <option value="All">All genre</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Romantic Novel">Romantic Novel</option>
+                <option value="Science Fiction">Science Fiction</option>
+            </select>
+                <button @click="sellBook">SELL</button>
+                </div>
+                <div class="books">
+                    <div class="d-flex flex-wrap ps-4 ">
                         <div class="card m-2 " style="width: 18rem;" v-for="(book, index) in filteredBooks">
                             <img :src="book.img" class="card-img-top" :alt="book.title">
                             <div class="card-body">
@@ -50,7 +61,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-2">
+                <div class="cart">
                     <div class="d-flex align-items-center">
                         <h3 class="me-2 ">Cart</h3><i class="fa-solid fa-cart-shopping"></i>
                     </div>
