@@ -1,0 +1,29 @@
+header {
+    background-color: rgb(30, 20, 48);
+    color: white;
+}
+
+.soldout {
+    color: red;
+}
+
+ul {
+    list-style: none;
+    padding-inline-start: 0px;
+}
+
+.fa-rectangle-xmark {
+    color: red;
+}
+
+.col-2 {
+    background-color: rgb(207, 216, 241);
+}
+
+.col-10 {
+    background-color: rgb(114, 128, 167);
+}
+
+body {
+    background-color: rgb(10, 11, 88);
+}
