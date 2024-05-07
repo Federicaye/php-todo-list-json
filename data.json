@@ -40,19 +40,5 @@
         "img": "img\/book.jpg",
         "id": "5",
         "soldout": "false"
-    },
-    {
-        "title": "few",
-        "genre": "Fantasy",
-        "img": "img\/book.jpg",
-        "id": "5",
-        "soldout": "false"
-    },
-    {
-        "title": "few",
-        "genre": "Fantasy",
-        "img": "img\/book.jpg",
-        "id": "5",
-        "soldout": "false"
     }
 ]

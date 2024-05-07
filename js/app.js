@@ -46,7 +46,7 @@ createApp({
                 }
             })
 
-            newBook.id = this.nextId;
+            newBook.id = this.nextId++;
 
             const data = new FormData();
             data.append('title', this.itemTitle);
