@@ -7,7 +7,9 @@ createApp({
             genre: "",
             itemTitle: "",
             genreSell: "",
-           
+            nextId: 0
+
+
         }
     },
     methods: {
@@ -29,6 +31,7 @@ createApp({
             }
         },
         sellBook() {
+            
             const newBook = {
                 id: null,
                 title: this.itemTitle,
@@ -36,26 +39,27 @@ createApp({
                 img: 'img/book.jpg',
                 soldout: false
             }
-            let nextId = 0;
+            this.books.push(newBook);
             this.books.forEach((el) => {
-                if (nextId < el.id) {
-                    nextId = el.id
+                if (this.nextId < el.id) {
+                    this.nextId = el.id
                 }
             })
-            newBook.id = nextId;
-            this.books.push(newBook);
+
+            newBook.id = this.nextId;
+
             const data = new FormData();
             data.append('title', this.itemTitle);
             data.append('genre', this.genreSell);
             data.append('img', 'img/book.jpg');
             data.append('id', this.nextId);
             data.append('soldout', false);
-            axios.post('server.php', data).then((res) =>{
+            axios.post('server.php', data).then((res) => {
                 console.log(res.data);
             })
         },
         getData() {
-            axios.get('server.php').then((res)=> {
+            axios.get('server.php').then((res) => {
                 this.books = res.data;
                 console.log(this.books);
             })
@@ -78,6 +82,6 @@ createApp({
 
     },
     mounted() {
-       this.getData();
+        this.getData();
     }
 }).mount('#app')
